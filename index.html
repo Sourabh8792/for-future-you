@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3ede2">
+    <meta name="description" content="A private gift.">
+    <meta name="robots" content="noindex, nofollow">
+    <title>A private gift</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <main id="app">
+      <section id="role-screen" class="gate-screen">
+        <header>
+          <h1>Let’s check who you are.</h1>
+        </header>
+        <hr>
+
+        <div class="role-options" aria-label="Choose who you are">
+          <button class="choice-button" type="button" data-role="mother">I’m his mother</button>
+          <button class="choice-button" type="button" data-role="father">I’m his father</button>
+          <button class="choice-button" type="button" data-role="nephew">I’m the guy, this gift is for me</button>
+        </div>
+      </section>
+
+      <section id="nephew-screen" class="gate-screen" hidden>
+        <header>
+          <h1>Okay, one small problem.</h1>
+        </header>
+        <hr>
+
+        <p>Well, I didn’t really have a WhatsApp chat with you when I wrote this, so ask your mom or dad to help you unlock it :)</p>
+
+        <div class="role-options" aria-label="Choose who will help">
+          <button class="choice-button" type="button" data-helper="mother">Ask Mom</button>
+          <button class="choice-button" type="button" data-helper="father">Ask Dad</button>
+        </div>
+
+        <button class="back-link" type="button" data-back>Go back</button>
+      </section>
+
+      <section id="question-screen" class="gate-screen" hidden>
+        <header>
+          <h1>One quick question.</h1>
+        </header>
+        <hr>
+
+        <p id="question-text"></p>
+
+        <form id="unlock-form" novalidate>
+          <label class="answer-label" for="answer">WhatsApp message</label>
+          <input id="answer" name="answer" type="password" autocomplete="off" required>
+          <button id="unlock-button" class="unlock-button" type="submit">Unlock the letter</button>
+          <p id="unlock-status" class="status-message" role="status" aria-live="polite"></p>
+        </form>
+
+        <button class="back-link" type="button" data-back>Go back</button>
+      </section>
+
+      <section id="letter-screen" hidden></section>
+
+      <noscript>This page needs JavaScript to unlock the private letter.</noscript>
+    </main>
+  </body>
+</html>
