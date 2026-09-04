@@ -20,7 +20,7 @@ const [html, css, script, config] = await Promise.all([
 ]);
 
 test("shows the three approved role choices", () => {
-  assert.match(html, /Let’s first check who you are\./);
+  assert.match(html, /Let’s first check who you are first\./);
   assert.match(html, />I’m his mother<\/button>/);
   assert.match(html, />I’m his father<\/button>/);
   assert.match(html, />I’m the guy, this gift is for me<\/button>/);
