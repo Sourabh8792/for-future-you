@@ -27,8 +27,14 @@ function showScreen(name) {
 
 function showQuestion(role) {
   const profile = ACCESS_PROFILES[role];
+  const exact = document.createElement("strong");
+  exact.textContent = "“exact”";
   selectedRole = role;
-  questionText.textContent = `Please copy and paste the “exact” first message I sent you on WhatsApp on ${profile.date}.`;
+  questionText.replaceChildren(
+    "Please copy-paste the ",
+    exact,
+    ` first message I sent you in our personal WhatsApp chat on ${profile.date}.`
+  );
   answerInput.value = "";
   statusMessage.textContent = "";
   showScreen("question");

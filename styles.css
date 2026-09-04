@@ -4,6 +4,8 @@
   --text: #24211d;
   --muted: #6d655d;
   --accent: #b85c3f;
+  --surface: #ebe1d3;
+  --surface-hover: #e4d7c6;
 }
 
 * {
@@ -69,7 +71,7 @@ input {
   padding: 14px 16px;
   border: 1px solid rgba(36, 33, 29, 0.35);
   border-radius: 8px;
-  background: transparent;
+  background: var(--surface);
   color: var(--text);
   text-align: left;
   cursor: pointer;
@@ -78,7 +80,7 @@ input {
 .choice-button:hover,
 .choice-button:focus-visible {
   border-color: var(--text);
-  background: rgba(36, 33, 29, 0.05);
+  background: var(--surface-hover);
 }
 
 #unlock-form {
@@ -98,7 +100,7 @@ input {
   padding: 11px 13px;
   border: 1px solid rgba(36, 33, 29, 0.45);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.42);
+  background: var(--surface);
   color: var(--text);
 }
 

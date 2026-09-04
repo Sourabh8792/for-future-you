@@ -73,6 +73,7 @@ The website does not explain the ETF, purchase, transfer process, or intended au
 - The public landing screen will offer three roles: mother, father, and "I'm the guy, this gift is for me".
 - Father's question will ask for Sourabh's first WhatsApp message on 13 June 2026.
 - Mother's question will ask for Sourabh's first WhatsApp message on 27 March 2026.
+- The question asks for the first message from the personal WhatsApp chat, uses "copy-paste", and bolds "exact".
 - The nephew will unlock the letter using either parent's answer, with their help.
 - Only the question dates may be committed. The answers and derived keys must never be stored in the repository, documentation, tests, or build logs.
 - The answer is normalized with Unicode NFC and outside whitespace is removed. Capitalisation, internal text, and punctuation remain exact.

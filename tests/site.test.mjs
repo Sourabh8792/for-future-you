@@ -20,7 +20,7 @@ const [html, css, script, config] = await Promise.all([
 ]);
 
 test("shows the three approved role choices", () => {
-  assert.match(html, /Let’s check who you are\./);
+  assert.match(html, /Let’s first check who you are\./);
   assert.match(html, />I’m his mother<\/button>/);
   assert.match(html, />I’m his father<\/button>/);
   assert.match(html, />I’m the guy, this gift is for me<\/button>/);
@@ -29,7 +29,9 @@ test("shows the three approved role choices", () => {
 test("uses the approved questions and nephew flow", () => {
   assert.match(config, /mother:[\s\S]*date: "27 March 2026"/);
   assert.match(config, /father:[\s\S]*date: "13 June 2026"/);
-  assert.match(script, /Please copy and paste the “exact” first message I sent you on WhatsApp on \$\{profile\.date\}\./);
+  assert.match(script, /exact\.textContent = "“exact”"/);
+  assert.match(script, /"Please copy-paste the "/);
+  assert.match(script, /first message I sent you in our personal WhatsApp chat on \$\{profile\.date\}\./);
   assert.match(html, /Well, I didn’t really have a WhatsApp chat with you when I wrote this, so ask your mom or dad to help you unlock it :\)/);
   assert.match(html, />Ask Mom<\/button>/);
   assert.match(html, />Ask Dad<\/button>/);
@@ -38,6 +40,8 @@ test("uses the approved questions and nephew flow", () => {
 test("keeps the gate minimal and locks again on reload", () => {
   assert.match(html, /class="back-link"[^>]*>Go back<\/button>/);
   assert.match(css, /\.back-link \{[\s\S]*font-size: 13px/);
+  assert.match(css, /--surface: #ebe1d3/);
+  assert.match(css, /\.choice-button,[\s\S]*background: var\(--surface\)/);
   assert.doesNotMatch(script, /localStorage|sessionStorage|indexedDB/);
   assert.doesNotMatch(css, /animation|gradient|backdrop-filter|box-shadow/);
 });
